@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     btnNo.addEventListener('click', moveButton);
 });
 
-/* --- XỬ LÝ BÀN PHÍM SỐ (KEYPAD) --- */
 
-// Hàm thêm số khi bấm nút
+
+
 function addDigit(digit) {
     const input = document.getElementById("password-input");
     // Giới hạn độ dài pass (ví dụ max 6 số) để không bị tràn

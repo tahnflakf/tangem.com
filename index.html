@@ -11,6 +11,32 @@
 </head>
 <body>
 
+    <div id="password-screen">
+        <div class="pass-container">
+            <h1>Nhập mật khẩu ❤️</h1>
+            <p class="hint-text">(Gợi ý: Ngày chúng mình quen nhau)</p> 
+            
+            <input type="password" id="password-input" placeholder="----" readonly>
+            
+            <div class="keypad">
+                <button class="key-btn" onclick="addDigit('1')">1</button>
+                <button class="key-btn" onclick="addDigit('2')">2</button>
+                <button class="key-btn" onclick="addDigit('3')">3</button>
+                <button class="key-btn" onclick="addDigit('4')">4</button>
+                <button class="key-btn" onclick="addDigit('5')">5</button>
+                <button class="key-btn" onclick="addDigit('6')">6</button>
+                <button class="key-btn" onclick="addDigit('7')">7</button>
+                <button class="key-btn" onclick="addDigit('8')">8</button>
+                <button class="key-btn" onclick="addDigit('9')">9</button>
+                <button class="key-btn action-btn" onclick="clearInput()">C</button>
+                <button class="key-btn" onclick="addDigit('0')">0</button>
+                <button class="key-btn action-btn" onclick="checkPassword()">OK</button>
+            </div>
+
+            <p id="error-message">Sai rồi! Thử lại đi nè 😝</p>
+        </div>
+    </div>
+
     <audio id="love-song" loop>
         <source src="nhac.mp3" type="audio/mpeg">
     </audio>

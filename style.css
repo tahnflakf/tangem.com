@@ -1,4 +1,4 @@
-/* Reset và Cấu hình chung */
+/* --- CẤU HÌNH CHUNG --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -21,7 +21,102 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Phần Container câu hỏi */
+/* --- MÀN HÌNH KHÓA & BÀN PHÍM SỐ --- */
+#password-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.pass-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 350px;
+}
+
+.pass-container h1 {
+    color: #ff4d6d;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.hint-text {
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#password-input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #ffccd5;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    outline: none;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 3px;
+    background-color: #fff0f5;
+    color: #ff4d6d;
+}
+
+/* Lưới bàn phím */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+    justify-items: center;
+}
+
+.key-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    color: #ff4d6d;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.2);
+    transition: transform 0.1s, background-color 0.2s;
+    font-family: 'Nunito', sans-serif;
+}
+
+.key-btn:active {
+    transform: scale(0.9);
+    background-color: #ffe6eb;
+}
+
+.action-btn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#error-message {
+    color: #ff4757;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+    font-size: 0.9rem;
+}
+
+/* --- GIAO DIỆN CHÍNH --- */
 .container {
     text-align: center;
     z-index: 10;
@@ -99,11 +194,11 @@ button {
     border: 2px solid #ff4d6d;
     position: absolute;
     left: 50%;
-    transform: translateX(60px); /* Lệch phải một chút */
+    transform: translateX(60px);
     transition: all 0.2s ease-out;
 }
 
-/* Phần Lời chúc (Glassmorphism) */
+/* --- MÀN HÌNH LỜI CHÚC (Glassmorphism) --- */
 #success-message {
     display: none;
     position: fixed;
@@ -118,7 +213,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -128,16 +223,15 @@ button {
 }
 
 .message-line {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: #444;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     opacity: 0;
     transform: translateY(20px);
-    line-height: 1.6;
+    line-height: 1.5;
     font-weight: 600;
 }
 
-/* Animation hiện chữ */
 @keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
 }
@@ -145,8 +239,8 @@ button {
 .big-love {
     font-family: 'Pacifico', cursive;
     color: #ff4757;
-    font-size: 3.5rem;
-    margin-top: 20px;
+    font-size: 3rem;
+    margin-top: 15px;
     margin-bottom: 10px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards 10s;
@@ -154,18 +248,18 @@ button {
 }
 
 .secret-gift {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #666;
     font-style: italic;
     opacity: 0;
     animation: fadeInUp 1s ease forwards 11s;
 }
 
-/* Delay từng dòng */
+/* Hiệu ứng hiện chữ từng dòng */
 .line-1 { animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s; }
 .line-2 { animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 3.5s; }
 .line-3 { animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 7.5s; }
-.line-4 { animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 9.0s; }
+.line-4 { animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 9.5s; }
 
 /* Tim rơi */
 .falling-heart {

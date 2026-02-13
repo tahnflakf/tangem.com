@@ -31,7 +31,7 @@ function clearInput() {
 // Hàm kiểm tra mật khẩu
 function checkPassword() {
     // >>> SỬA MẬT KHẨU CỦA BẠN Ở ĐÂY <<<
-    const CORRECT_PASS = "2011"; 
+    const CORRECT_PASS = "140125"; 
     
     const inputVal = document.getElementById("password-input").value;
     const errorMsg = document.getElementById("error-message");
